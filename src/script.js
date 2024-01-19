@@ -66,8 +66,8 @@ gltfLoader.load(
             
             lily.scale.set(0.1, 0.1, 0.1)
             lily.position.set(x, 0, z)    
-            lily.rotation.z = (Math.random() - 0.5) * 0.4
-            lily.rotation.x = (Math.random() - 0.5) * 0.4
+            // lily.rotation.z = (Math.random() - 0.5) * 0.4
+            // lily.rotation.x = (Math.random() - 0.5) * 0.4
 
             lilies.add(lily);
             lily.castShadow = true;
