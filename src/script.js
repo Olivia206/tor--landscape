@@ -57,17 +57,15 @@ gltfLoader.load(
         
         for(let i = 0; i < 15; i++)
         {
-            const angle = Math.random() * Math.PI * 2 // Random angle
-            const radius = 5 + Math.random() * 15     // Random radius : on évite le centre et on étend jusqu'à 15
-            const x = Math.cos(angle) * radius        // Get the x position using cosinus
-            const z = Math.sin(angle) * radius        // Get the z position using sinus
+            const angle = Math.random() * Math.PI * 2
+            const radius = 5 + Math.random() * 15
+            const x = Math.cos(angle) * radius
+            const z = Math.sin(angle) * radius
 
             const lily = gltf.scene.children[0].clone();
             
             lily.scale.set(0.1, 0.1, 0.1)
-            lily.position.set(x, 0, z)    
-            // lily.rotation.z = (Math.random() - 0.5) * 0.4
-            // lily.rotation.x = (Math.random() - 0.5) * 0.4
+            lily.position.set(x, 0, z)
 
             lilies.add(lily);
             lily.castShadow = true;
@@ -83,15 +81,15 @@ gltfLoader.load(
         
         for(let i = 0; i < 15; i++)
         {
-            const angle = Math.random() * Math.PI * 2 // Random angle
-            const radius = 9 + Math.random() * 15     // Random radius : on évite le centre et on étend jusqu'à 15
-            const x = Math.cos(angle) * radius        // Get the x position using cosinus
-            const z = Math.sin(angle) * radius        // Get the z position using sinus
+            const angle = Math.random() * Math.PI * 2
+            const radius = 9 + Math.random() * 15
+            const x = Math.cos(angle) * radius
+            const z = Math.sin(angle) * radius
 
             const toro = gltf.scene.children[0].clone();
             
-            // toro.scale.set(1, 1, 1)
-            toro.position.set(x, 0.3, z)    
+            toro.scale.set(0.2, 0.6, 0.2)
+            toro.position.set(x, 1.5, z)    
 
             toros.add(toro);
             toro.castShadow = true;
@@ -113,17 +111,12 @@ scene.add(water)
  * Lights
  */
 // Ambient light
-const ambientLight = new THREE.AmbientLight('#b9d5ff', 0.12)
-// gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001)
+const ambientLight = new THREE.AmbientLight('#b9d5ff', 0.9)
 scene.add(ambientLight)
 
 // Directional light
 const moonLight = new THREE.DirectionalLight('#b9d5ff', 0.26)
 moonLight.position.set(4, 5, - 2)
-// gui.add(moonLight, 'intensity').min(0).max(1).step(0.001)
-// gui.add(moonLight.position, 'x').min(- 5).max(5).step(0.001)
-// gui.add(moonLight.position, 'y').min(- 5).max(5).step(0.001)
-// gui.add(moonLight.position, 'z').min(- 5).max(5).step(0.001)
 scene.add(moonLight)
 
 /**
